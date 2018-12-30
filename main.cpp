@@ -21,7 +21,6 @@ int main() {
     int adj_size = 0;
     int noun_size = 0;
     in_stream.open("../adjective.txt"); // Open the file
-    //in_stream.open("/Users/Peter/Downloads/UserNameGenerator/nouns.txt");
     while (getline(in_stream, ADJ, '\n')) {
         if (!ADJ.empty()) {
             adjectives.push_back(ADJ);
@@ -38,7 +37,7 @@ int main() {
 
     // randomize the indicies of the vectors.
     bool length = true;
-    bool containment = true;
+    string user_lines;
     while(length = true) {
         int rand_adj = rand() % adjectives.size();
         int rand_noun = rand() % nouns.size();
@@ -56,20 +55,20 @@ int main() {
             out_stream.open("../usernames.txt", ios_base::app);
 
             in_stream.open("../usernames.txt"); // Load usernames file into an array
-            while(getline(in_stream, users, '\n')){
-                if(!usernames.empty()){
+            while (getline(in_stream, users, '\n')) {
+                if (!usernames.empty()) {
                     usernames.push_back(users);
                 }
             }
-            in_stream.close();
-
+            vector<string>::iterator string_it = find(usernames.begin(), usernames.end(),final_string);
+            if(string_it == usernames.end()) {
+                in_stream.close();
                 out_stream << final_string;
                 out_stream.close();
-
                 cout << final_string;
                 length = false;
                 break;
-
+            }
         }
     }
 }
