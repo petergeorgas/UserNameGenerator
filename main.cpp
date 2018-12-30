@@ -20,7 +20,7 @@ int main() {
     fstream in_stream;
     int adj_size = 0;
     int noun_size = 0;
-    in_stream.open("/Users/Peter/Downloads/UserNameGenerator/adjective.txt"); // Open the file
+    in_stream.open("../adjective.txt"); // Open the file
     //in_stream.open("/Users/Peter/Downloads/UserNameGenerator/nouns.txt");
     while (getline(in_stream, ADJ, '\n')) {
         if (!ADJ.empty()) {
@@ -28,7 +28,7 @@ int main() {
         }
     }
     in_stream.close();
-    in_stream.open("/Users/Peter/Downloads/UserNameGenerator/nouns.txt");
+    in_stream.open("../nouns.txt");
     while (getline(in_stream, noun, '\n')) { // Store each line of the text file into a vector.
         if (!noun.empty()) {
             nouns.push_back(noun);
@@ -53,16 +53,15 @@ int main() {
         if (final_string.length() <= 15) { // If the size of the username is <= 15, write it to the usernames file and output the name.
 
             ofstream out_stream;
-            out_stream.open("/Users/Peter/Downloads/UserNameGenerator/usernames.txt", ios_base::app);
+            out_stream.open("../usernames.txt", ios_base::app);
 
-            in_stream.open("/Users/Peter/Downloads/UserNameGenerator/usernames.txt"); // Load usernames file into an array
+            in_stream.open("../usernames.txt"); // Load usernames file into an array
             while(getline(in_stream, users, '\n')){
                 if(!usernames.empty()){
                     usernames.push_back(users);
                 }
             }
             in_stream.close();
-            if(find(usernames.begin(), usernames.end(), final_string) != usernames.end()) { //CURRENTLY DOESN'T WORK
 
                 out_stream << final_string;
                 out_stream.close();
@@ -70,7 +69,7 @@ int main() {
                 cout << final_string;
                 length = false;
                 break;
-            }
+
         }
     }
 }
