@@ -1,0 +1,3 @@
+C:/Users/Peter/CLionProjects/UserNameGenrator/cmake-build-debug/CMakeFiles/UserNameGenrator.dir
+C:/Users/Peter/CLionProjects/UserNameGenrator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Peter/CLionProjects/UserNameGenrator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

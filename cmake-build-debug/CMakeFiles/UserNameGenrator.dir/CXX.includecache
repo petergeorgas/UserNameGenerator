@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Peter/CLionProjects/UserNameGenrator/main.cpp
+iostream
+-
+fstream
+-
+cstdlib
+-
+vector
+-
+ctime
+-
+cstdlib
+-
+algorithm
+-
+ctime
+-
+sstream
+-
+
